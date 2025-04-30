@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Case Gap Analysis for MP-2763</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .table-container {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f4f4f4;
+            position: sticky;
+            top: 0;
+        }
+        .source-text {
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-left: 3px solid #007bff;
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        .priority-high {
+            background-color: #ffe6e6;
+            color: #cc0000;
+            padding: 2px 5px;
+            border-radius: 3px;
+            font-weight: bold;
+        }
+        .priority-medium {
+            background-color: #fff8e6;
+            color: #cc7700;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .priority-low {
+            background-color: #e6f2ff;
+            color: #0066cc;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .summary-container {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .recommendation {
+            background-color: #e6ffe6;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+        .gap-container {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Test Case Gap Analysis for MP-2763</h1>
+    
+    <div class="summary-container">
+        <h3>Gap Analysis Summary</h3>
+        <p>This analysis identifies potential gaps in test coverage for the MP-2763 requirements.</p>
+        <ul>
+            <li><span class="priority-high">High Priority Gaps:</span> 2 potential gaps identified</li>
+            <li><span class="priority-medium">Medium Priority Gaps:</span> 1 potential gap identified</li>
+            <li><span class="priority-low">Low Priority Gaps:</span> 0 potential gaps identified</li>
+        </ul>
+    </div>
+    
+    <h2>Identified Gaps</h2>
+    
+    <div class="gap-container">
+        <h3><span class="priority-high">Gap 1:</span> Validation of Invalid File Types</h3>
+        <div class="source-text">
+            "What happens if a non-supported file type is attempted to be uploaded using the additional documents feature - for example, a Macro enabled workbook?"
+        </div>
+        <p><strong>Analysis:</strong> While TC-018 "Verify that the system displays an error message when an invalid file type is uploaded" exists, it's essential to ensure that the test case covers all possible invalid file types.</p>
+        <div class="recommendation">
+            <p><strong>Recommended Test Case:</strong> Enhance TC-018 to include a comprehensive list of invalid file types, such as executable files, system files, and other non-PDF document types.</p>
+        </div>
+    </div>
+    
+    <div class="gap-container">
+        <h3><span class="priority-high">Gap 2:</span> Security Testing for SQL Injection and XSS</h3>
+        <p><strong>Analysis:</strong> While TC-016 and TC-017 exist to test for SQL injection and XSS vulnerabilities, it's crucial to ensure that these tests are comprehensive and cover all possible attack vectors.</p>
+        <div class="recommendation">
+            <p><strong>Recommended Test Case:</strong> Enhance TC-016 and TC-017 to include additional testing for SQL injection and XSS vulnerabilities, such as testing for blind SQL injection and DOM-based XSS.</p>
+        </div>
+    </div>
+    
+    <div class="gap-container">
+        <h3><span class="priority-medium">Gap 3:</span> Testing for Additional Docs Section</h3>
+        <p><strong>Analysis:</strong> While TC-013, TC-014, and TC-015 exist to test the Additional Docs section, it's essential to ensure that the test cases cover all possible scenarios, such as uploading multiple files, deleting files, and verifying file names and icons.</p>
+        <div class="recommendation">
+            <p><strong>Recommended Test Case:</strong> Enhance TC-013, TC-014, and TC-015 to include additional testing for the Additional Docs section, such as testing for file upload and deletion, and verifying file names and icons.</p>
+        </div>
+    </div>
+    
+    <h2>Implementation Order</h2>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Gap</th>
+                    <th>Priority</th>
+                    <th>Recommended Implementation Order</th>
+                    <th>Rationale</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Validation of Invalid File Types</td>
+                    <td><span class="priority-high">High</span></td>
+                    <td>1</td>
+                    <td>High priority due to potential security risks</td>
+                </tr>
+                <tr>
+                    <td>Security Testing for SQL Injection and XSS</td>
+                    <td><span class="priority-high">High</span></td>
+                    <td>2</td>
+                    <td>High priority due to potential security risks</td>
+                </tr>
+                <tr>
+                    <td>Testing for Additional Docs Section</td>
+                    <td><span class="priority-medium">Medium</span></td>
+                    <td>3</td>
+                    <td>Medium priority due to potential impact on functionality</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

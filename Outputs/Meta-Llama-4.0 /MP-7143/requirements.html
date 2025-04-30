@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP-7143 Requirements Table with Source Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .table-container {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f4f4f4;
+            position: sticky;
+            top: 0;
+        }
+        .req-id {
+            font-weight: bold;
+            width: 80px;
+        }
+        .req-type {
+            width: 100px;
+        }
+        .source-text {
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-left: 3px solid #007bff;
+            margin: 5px 0;
+            font-family: "Courier New", monospace;
+        }
+        h1 {
+            color: #333;
+        }
+        .req-source {
+            width: 130px;
+        }
+    </style>
+</head>
+<body>
+    <h1>MP-7143 Requirements Table with Source Text</h1>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="req-id">Req ID</th>
+                    <th class="req-type">Type</th>
+                    <th>Description</th>
+                    <th class="req-source">Source</th>
+                    <th>Exact Text from Specification</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="req-id">REQ-001</td>
+                    <td class="req-type">Functional</td>
+                    <td>Any manager that does not have a status of ‘Current’ will be excluded for notifications where their manager type has been identified as receiving notifications for a specific call subject.</td>
+                    <td class="req-source">Required</td>
+                    <td>
+                        <div class="source-text">
+                            "Any manager that does not have a status of ‘Current’ will be excluded for notifications where their manager type has been identified as receiving notifications for a specific call subject."
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-002</td>
+                    <td class="req-type">Functional</td>
+                    <td>Where there are no current managers of that type then the logic of the Call subjects routine will apply and the emails will be sent to the Individual/Backup Email(s).</td>
+                    <td class="req-source">Required</td>
+                    <td>
+                        <div class="source-text">
+                            "Where there are no current managers of that type then the logic of the Call subjects routine will apply and the emails will be sent to the Individual/Backup Email(s)"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-003</td>
+                    <td class="req-type">Functional</td>
+                    <td>Emails are sent to managers that are Current and are that manager type for that property.</td>
+                    <td class="req-source">Acceptance Criteria 1</td>
+                    <td>
+                        <div class="source-text">
+                            "emails are sent to managers that are Current and are that manager type for that property"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-004</td>
+                    <td class="req-type">Functional</td>
+                    <td>Emails are not sent to managers that are not Current.</td>
+                    <td class="req-source">Acceptance Criteria 1</td>
+                    <td>
+                        <div class="source-text">
+                            "Emails are not sent to managers that are not Current."
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-005</td>
+                    <td class="req-type">Functional</td>
+                    <td>When there are no ‘Current’ managers attached to that Manager type, the email is sent to the ‘Individual/backup’ Emails.</td>
+                    <td class="req-source">Acceptance Criteria 2</td>
+                    <td>
+                        <div class="source-text">
+                            "the email is sent to the ‘Individual/backup’ Emails"
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

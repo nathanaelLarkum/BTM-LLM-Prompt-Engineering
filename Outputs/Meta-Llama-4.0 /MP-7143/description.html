@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Case: TC-001 Details</title>
+    <style>
+        .detailed-descriptions {
+            margin-top: 50px;
+            padding: 20px;
+        }
+        .test-case-detail {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-case-detail h3 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="detailed-descriptions">
+        <div id="TC-001" class="test-case-detail">
+            <h3>Test Case: TC-001 - Verify emails are sent to current managers when a call is raised with a subject that has a manager type to notify</h3>
+            <div class="test-case">
+                <h4>Test Case ID</h4>
+                <p>TC-001</p>
+    
+                <h4>Test Scenario</h4>
+                <p>Verify that emails are sent to current managers when a call is raised with a subject that has a manager type to notify, and there are managers attached to that manager type with a status of both 'Current' and 'Archived'.</p>
+    
+                <h4>Test Entry Requirement / Prerequisites</h4>
+                <ul>
+                    <li>Mojo v7.0.0</li>
+                    <li>Call notification feature enabled and configured</li>
+                    <li>Manager types and notification settings configured</li>
+                    <li>Test user with manager role and 'Current' status</li>
+                    <li>Test user with manager role and 'Archived' status</li>
+                </ul>
+    
+                <h4>Test Tools</h4>
+                <ul>
+                    <li>Email client (e.g., Outlook)</li>
+                </ul>
+    
+                <h4>Test Conditions</h4>
+                <ul>
+                    <li>Test environment with Mojo v7.0.0 deployed</li>
+                    <li>Email server configured and functional</li>
+                </ul>
+    
+                <h4>Test Environment</h4>
+                <ul>
+                    <li>Mojo v7.0.0 test environment</li>
+                    <li>Email server</li>
+                </ul>
+    
+                <h4>Code Deployment Status</h4>
+                <ul>
+                    <li>Mojo v7.0.0 code deployed to test environment</li>
+                </ul>
+    
+                <h4>Test Data Validation</h4>
+                <ul>
+                    <li>Verify email sent to current manager's email address</li>
+                    <li>Verify email not sent to archived manager's email address</li>
+                </ul>
+    
+                <h4>Test Data</h4>
+                <ul>
+                    <li>Manager Type: Test Manager Type</li>
+                    <li>Current Manager: John Doe (johndoe@example.com)</li>
+                    <li>Archived Manager: Jane Smith (janesmith@example.com)</li>
+                    <li>Call Subject: Test Call Subject</li>
+                </ul>
+    
+                <h4>Browser / Device</h4>
+                <ul>
+                    <li>Chrome v120.0.6099.129</li>
+                    <li>Edge v120.0.2210.91</li>
+                    <li>Firefox v121.0</li>
+                </ul>
+    
+                <h4>Test Steps</h4>
+                <ol>
+                    <li>Log into Mojo as administrator</li>
+                    <li>Create a new call with the test call subject</li>
+                    <li>Assign the test manager type to the call subject</li>
+                    <li>Save and raise the call</li>
+                    <li>Verify emails sent to current manager's email address</li>
+                    <li>Verify no emails sent to archived manager's email address</li>
+                </ol>
+    
+                <h4>Expected Outcome</h4>
+                <ul>
+                    <li>Email sent to current manager's email address</li>
+                    <li>No email sent to archived manager's email address</li>
+                </ul>
+    
+                <h4>Expected Results</h4>
+                <ul>
+                    <li>Email subject: Notification for Test Call Subject</li>
+                    <li>Email body: contains call details and notification message</li>
+                </ul>
+    
+                <h4>Risk Coverage</h4>
+                <ul>
+                    <li>Ensures current managers receive notifications for calls</li>
+                    <li>Ensures archived managers do not receive notifications for calls</li>
+                </ul>
+    
+                <h4>Actual Outcome</h4>
+                <ul>
+                    <li>[To be run after test execution]</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

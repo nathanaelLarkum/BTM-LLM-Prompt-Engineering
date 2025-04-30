@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MP-2763 Requirements Table with Source Text</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .table-container {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f4f4f4;
+            position: sticky;
+            top: 0;
+        }
+        .req-id {
+            font-weight: bold;
+            width: 80px;
+        }
+        .req-type {
+            width: 100px;
+        }
+        .source-text {
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-left: 3px solid #007bff;
+            margin: 5px 0;
+            font-family: "Courier New", monospace;
+        }
+        h1 {
+            color: #333;
+        }
+        .req-source {
+            width: 130px;
+        }
+    </style>
+</head>
+<body>
+    <h1>MP-2763 Requirements Table with Source Text</h1>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th class="req-id">Req ID</th>
+                    <th class="req-type">Type</th>
+                    <th>Description</th>
+                    <th class="req-source">Source</th>
+                    <th>Exact Text from Specification</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="req-id">REQ-001</td>
+                    <td class="req-type">Functional</td>
+                    <td>The Initiator Widget should allow drag and drop of one or more PDF files.</td>
+                    <td class="req-source">Section 1, Initiator Widget</td>
+                    <td>
+                        <div class="source-text">
+                            "The Initiator Widget will allow the drag and drop of one or more PDF files."
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-002</td>
+                    <td class="req-type">Functional</td>
+                    <td>The Initiator Widget should not allow a maximized state.</td>
+                    <td class="req-source">Section 1, Initiator Widget</td>
+                    <td>
+                        <div class="source-text">
+                            "Not allow a maximised state - this will be inappropriate use of space."
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-003</td>
+                    <td class="req-type">Functional</td>
+                    <td>The Initiator Widget should have a fixed size of 3x3 dashboard grid units.</td>
+                    <td class="req-source">Section 1, Initiator Widget</td>
+                    <td>
+                        <div class="source-text">
+                            "Have a fixed size of 3x3 dashboard grid units"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-004</td>
+                    <td class="req-type">Functional</td>
+                    <td>The Input Widget should open as a modal screen with a fixed size.</td>
+                    <td class="req-source">Section 2, Input Widget</td>
+                    <td>
+                        <div class="source-text">
+                            "This will be a modal pop-up on top of the usual dark overlay, its initial size will be: Width = 980px Height = 800px"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-005</td>
+                    <td class="req-type">Functional</td>
+                    <td>The Input Widget should have a maximize/return toggle button.</td>
+                    <td class="req-source">Section 2, Input Widget</td>
+                    <td>
+                        <div class="source-text">
+                            "A Maximise/Return toggle button - i.e. it will toggle between a maximised state and back to its modal pop-up state."
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-006</td>
+                    <td class="req-type">Functional</td>
+                    <td>The Input Widget should have a close button with a confirmation dialog.</td>
+                    <td class="req-source">Section 2, Input Widget</td>
+                    <td>
+                        <div class="source-text">
+                            "A Close button, clicking close will display the following confirmation dialog:"
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-007</td>
+                    <td class="req-type">Functional</td>
+                    <td>The Additional Docs section should allow drag and drop of files.</td>
+                    <td class="req-source">Section 3, Additional Docs</td>
+                    <td>
+                        <div class="source-text">
+                            "Dragging and Dropping a single or multiple file(s) will: Attach them to the current invoice as additional documents / files."
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-008</td>
+                    <td class="req-type">Functional</td>
+                    <td>The Additional Docs section should list attached files with their file names and delete icons.</td>
+                    <td class="req-source">Section 3, Additional Docs</td>
+                    <td>
+                        <div class="source-text">
+                            "For each attached additional document / file, its file name will be displayed in a list. For each attached additional document / file, there will be an associated delete icon (trash can)."
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

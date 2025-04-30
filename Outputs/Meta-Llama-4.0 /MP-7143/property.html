@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Properties: TC-001</title>
+    <style>
+        .test-properties {
+            margin-top: 50px;
+            padding: 20px;
+        }
+        .test-property {
+            margin-bottom: 40px;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .test-property h3 {
+            color: #333;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #007bff;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-properties">
+        <div class="test-property">
+            <h3>Business Impact</h3>
+            <ul>
+                <li><b>Impact on Business Operations:</b> This test case affects the notification system for managers, ensuring that current managers receive notifications for calls and archived managers do not. If this test fails, it could disrupt the notification system, leading to potential delays or misunderstandings.</li>
+                <li><b>Potential Business Consequences:</b> If this test fails, the business may experience issues with communication and response times, potentially leading to decreased productivity and efficiency. In extreme cases, critical issues may not be addressed in a timely manner, leading to financial losses or reputational damage.</li>
+                <li><b>Criticality:</b> This functionality is critical to business processes, as it ensures that the right people are notified and can respond to issues in a timely manner. The failure of this test case could have significant consequences, making it a high-priority test case.</li>
+            </ul>
+        </div>
+        <div class="test-property">
+            <h3>Risk Analysis</h3>
+            <ul>
+                <li><b>Risks Addressed:</b> This test case addresses the risk of incorrect notifications being sent to managers, which could lead to confusion, delays, or incorrect responses.</li>
+                <li><b>Severity:</b> The severity of this risk is high, as incorrect notifications could have significant consequences for business operations and productivity.</li>
+                <li><b>Likelihood:</b> The likelihood of this risk occurring is medium, as it depends on the specific configuration and implementation of the notification system.</li>
+            </ul>
+        </div>
+        <div class="test-property">
+            <h3>Complexity</h3>
+            <ul>
+                <li><b>Complexity Factors:</b> This test case is complex due to the need to test the notification system with different manager statuses (current and archived) and ensure that the correct notifications are sent.</li>
+                <li><b>Technical Challenges:</b> The technical challenges in this test case include ensuring that the notification system correctly interprets the manager status and sends notifications accordingly.</li>
+                <li><b>Dependencies:</b> This test case depends on the correct configuration of the notification system, manager statuses, and call subjects.</li>
+            </ul>
+        </div>
+        <div class="test-property">
+            <h3>Potential Failure Consequences</h3>
+            <ul>
+                <li><b>Potential Failure:</b> If this test fails, the notification system may send incorrect notifications to managers, leading to confusion, delays, or incorrect responses.</li>
+                <li><b>Downstream Impacts:</b> The downstream impacts of this failure could include decreased productivity, efficiency, and potentially financial losses or reputational damage.</li>
+                <li><b>Recovery Requirements:</b> To recover from this failure, the notification system would need to be reconfigured and retested to ensure that it correctly sends notifications to current managers and not to archived managers.</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

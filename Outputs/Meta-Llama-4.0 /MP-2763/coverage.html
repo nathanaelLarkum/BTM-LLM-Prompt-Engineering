@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requirements-to-Test Case Traceability Matrix</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .table-container {
+            margin: 20px 0;
+            overflow-x: auto;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: left;
+            vertical-align: top;
+        }
+        th {
+            background-color: #f4f4f4;
+            position: sticky;
+            top: 0;
+        }
+        .source-text {
+            background-color: #f8f9fa;
+            padding: 8px;
+            border-left: 3px solid #007bff;
+            margin: 5px 0;
+            font-size: 0.9em;
+        }
+        .coverage-good {
+            background-color: #e6ffe6;
+            color: #006600;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .coverage-partial {
+            background-color: #fff8e6;
+            color: #cc7700;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .coverage-gap {
+            background-color: #ffe6e6;
+            color: #cc0000;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+        .req-id {
+            font-weight: bold;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .summary-container {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        .test-case-badge {
+            display: inline-block;
+            background-color: #e6f2ff;
+            color: #0066cc;
+            padding: 2px 6px;
+            border-radius: 3px;
+            margin: 2px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Coverage Report for MP-2763</h1>
+    
+    <div class="summary-container">
+        <h3>Coverage Summary</h3>
+        <ul>
+            <li><span class="coverage-good">Fully Covered: 6</span></li>
+            <li><span class="coverage-partial">Partially Covered: 2</span></li>
+            <li><span class="coverage-gap">Not Covered: 0</span></li>
+            <li>Total Requirements: 8</li>
+        </ul>
+    </div>
+    
+    <h2>Detailed Traceability Analysis</h2>
+    
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Req ID</th>
+                    <th>Requirement Description</th>
+                    <th>Source Text</th>
+                    <th>Test Cases</th>
+                    <th>Coverage Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="req-id">REQ-001</td>
+                    <td>The Initiator Widget should allow drag and drop of one or more PDF files.</td>
+                    <td>
+                        <div class="source-text">
+                            "The Initiator Widget will allow the drag and drop of one or more PDF files."
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-001</span>
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-002</td>
+                    <td>The Initiator Widget should not allow a maximized state.</td>
+                    <td>
+                        <div class="source-text">
+                            "Not allow a maximised state - this will be inappropriate use of space."
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-002</span>
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-003</td>
+                    <td>The Initiator Widget should have a fixed size of 3x3 dashboard grid units.</td>
+                    <td>
+                        <div class="source-text">
+                            "Have a fixed size of 3x3 dashboard grid units"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-003</span>
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-004</td>
+                    <td>The Input Widget should open as a modal screen with a fixed size.</td>
+                    <td>
+                        <div class="source-text">
+                            "This will be a modal pop-up on top of the usual dark overlay, its initial size will be: Width = 980px Height = 800px"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-004</span>
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-005</td>
+                    <td>The Input Widget should have a maximize/return toggle button.</td>
+                    <td>
+                        <div class="source-text">
+                            "A Maximise/Return toggle button - i.e. it will toggle between a maximised state and back to its modal pop-up state."
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-005</span>
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-006</td>
+                    <td>The Input Widget should have a close button with a confirmation dialog.</td>
+                    <td>
+                        <div class="source-text">
+                            "A Close button, clicking close will display the following confirmation dialog:"
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-006</span>
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+                <tr>
+                    <td class="req-id">REQ-007</td>
+                    <td>The Additional Docs section should allow drag and drop of files.</td>
+                    <td>
+                        <div class="source-text">
+                            "Dragging and Dropping a single or multiple file(s) will: Attach them to the current invoice as additional documents / files."
+                        </tr>
+                <tr>
+                    <td class="req-id">REQ-008</td>
+                    <td>The Additional Docs section should list attached files with their file names and delete icons.</td>
+                    <td>
+                        <div class="source-text">
+                            "For each attached additional document / file, its file name will be displayed in a list. For each attached additional document / file, there will be an associated delete icon (trash can)."
+                        </div>
+                    </td>
+                    <td>
+                        <span class="test-case-badge">TC-007</span>
+                    </td>
+                    <td><span class="coverage-good">Fully Covered</span></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <h2>Recommendations</h2>
+    
+    <div class="summary-container">
+        <ul>
+            <li>Ensure that all test cases are executed and verified to confirm coverage.</li>
+            <li>Review the test cases to ensure they cover all possible scenarios and edge cases.</li>
+        </ul>
+    </div>
+</body>
+</html>

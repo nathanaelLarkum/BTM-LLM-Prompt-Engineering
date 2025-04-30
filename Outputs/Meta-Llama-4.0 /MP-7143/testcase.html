@@ -1,0 +1,120 @@
+<table>
+    <tr>
+    <th>Test ID</th>
+    <th>Category</th>
+    <th>Description</th>
+    <th>Test Type</th>
+    <th>Priority</th>
+    <th>Source in Spec</th>
+    <th>ISO 25010 Category</th>
+    <th>Coverage Status</th>
+    </tr>
+    <tr>
+    <td>TC-001</td>
+    <td>Notification</td>
+    <td>Verify emails are sent to current managers when a call is raised with a subject that has a manager type to notify</td>
+    <td>Functional</td>
+    <td>High</td>
+    <td>MP-7143, Acceptance Criteria 1</td>
+    <td>Functional Suitability - Correctness</td>
+    <td>Covered
+    <!-- Coverage Status Modal -->
+    <div style="display:none">
+    Source Document: MP-7143
+    Location: Acceptance Criteria 1
+    Requirement Text: 'emails are sent to managers that are Current and are that manager type for that property'
+    Traceability: This test case maps to the requirement that current managers should receive notifications when a call is raised with a subject that has a manager type to notify.
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td>TC-002</td>
+    <td>Notification</td>
+    <td>Verify emails are not sent to non-current managers when a call is raised with a subject that has a manager type to notify</td>
+    <td>Functional</td>
+    <td>High</td>
+    <td>MP-7143, Acceptance Criteria 1</td>
+    <td>Functional Suitability - Correctness</td>
+    <td>Covered
+    <!-- Coverage Status Modal -->
+    <div style="display:none">
+    Source Document: MP-7143
+    Location: Acceptance Criteria 1
+    Requirement Text: 'Emails are not sent to managers that are not Current.'
+    Traceability: This test case maps to the requirement that non-current managers should not receive notifications when a call is raised with a subject that has a manager type to notify.
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td>TC-003</td>
+    <td>Notification</td>
+    <td>Verify emails are sent to individual/backup emails when there are no current managers attached to the manager type</td>
+    <td>Functional</td>
+    <td>High</td>
+    <td>MP-7143, Acceptance Criteria 2</td>
+    <td>Functional Suitability - Correctness</td>
+    <td>Covered
+    <!-- Coverage Status Modal -->
+    <div style="display:none">
+    Source Document: MP-7143
+    Location: Acceptance Criteria 2
+    Requirement Text: 'the email is sent to the ‘Individual/backup’ Emails'
+    Traceability: This test case maps to the requirement that individual/backup emails should receive notifications when there are no current managers attached to the manager type.
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td>TC-004</td>
+    <td>Notification</td>
+    <td>Verify multiple current managers receive notifications when a call is raised with a subject that has a manager type to notify</td>
+    <td>Functional</td>
+    <td>Medium</td>
+    <td>MP-7143, Acceptance Criteria 1</td>
+    <td>Functional Suitability - Completeness</td>
+    <td>Covered
+    <!-- Coverage Status Modal -->
+    <div style="display:none">
+    Source Document: MP-7143
+    Location: Acceptance Criteria 1
+    Requirement Text: 'emails are sent to managers that are Current and are that manager type for that property'
+    Traceability: This test case maps to the requirement that current managers should receive notifications when a call is raised with a subject that has a manager type to notify.
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td>TC-005</td>
+    <td>Notification</td>
+    <td>Verify single current manager receives notification when a call is raised with a subject that has a manager type to notify</td>
+    <td>Functional</td>
+    <td>Medium</td>
+    <td>MP-7143, Acceptance Criteria 1</td>
+    <td>Functional Suitability - Completeness</td>
+    <td>Covered
+    <!-- Coverage Status Modal -->
+    <div style="display:none">
+    Source Document: MP-7143
+    Location: Acceptance Criteria 1
+    Requirement Text: 'emails are sent to managers that are Current and are that manager type for that property'
+    Traceability: This test case maps to the requirement that current managers should receive notifications when a call is raised with a subject that has a manager type to notify.
+    </div>
+    </td>
+    </tr>
+    <tr>
+    <td>TC-006</td>
+    <td>Error Handling</td>
+    <td>Verify error handling when manager type is not found</td>
+    <td>Error</td>
+    <td>Medium</td>
+    <td>MP-7143, implicit requirement</td>
+    <td>Functional Suitability - Correctness</td>
+    <td>Not Covered
+    <!-- Coverage Status Modal -->
+    <div style="display:none">
+    Source Document: MP-7143
+    Location: implicit requirement
+    Requirement Text: None
+    Traceability: This test case is not covered as there is no explicit requirement for error handling when manager type is not found. However, it is recommended to add this test case to ensure the system handles such scenarios correctly.
+    </div>
+    </td>
+    </tr>
+    </table>

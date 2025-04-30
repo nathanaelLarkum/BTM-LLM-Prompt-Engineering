@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Coverage Report</title>
+<style>
+body {
+font-family: Arial, sans-serif;
+margin: 20px;
+line-height: 1.6;
+}
+.table-container {
+margin: 20px 0;
+overflow-x: auto;
+}
+table {
+width: 100%;
+border-collapse: collapse;
+margin-bottom: 20px;
+}
+th, td {
+border: 1px solid #ddd;
+padding: 10px;
+text-align: left;
+vertical-align: top;
+}
+th {
+background-color: #f4f4f4;
+position: sticky;
+top: 0;
+}
+.source-text {
+background-color: #f8f9fa;
+padding: 8px;
+border-left: 3px solid #007bff;
+margin: 5px 0;
+font-size: 0.9em;
+}
+.coverage-good {
+background-color: #e6ffe6;
+color: #006600;
+padding: 2px 5px;
+border-radius: 3px;
+}
+.coverage-partial {
+background-color: #fff8e6;
+color: #cc7700;
+padding: 2px 5px;
+border-radius: 3px;
+}
+.coverage-gap {
+background-color: #ffe6e6;
+color: #cc0000;
+padding: 2px 5px;
+border-radius: 3px;
+}
+.req-id {
+font-weight: bold;
+}
+h1, h2, h3 {
+color: #333;
+}
+.summary-container {
+margin: 20px 0;
+padding: 15px;
+background-color: #f8f9fa;
+border-radius: 5px;
+}
+.test-case-badge {
+display: inline-block;
+background-color: #e6f2ff;
+color: #0066cc;
+padding: 2px 6px;
+border-radius: 3px;
+margin: 2px;
+}
+</style>
+</head>
+<body>
+<h1>Coverage Report</h1>
+<div class="summary-container">
+    <h3>Coverage Summary</h3>
+    <ul>
+        <li><span class="coverage-good">Fully Covered: 3</span></li>
+        <li><span class="coverage-partial">Partially Covered: 1</span></li>
+        <li><span class="coverage-gap">Not Covered: 1</span></li>
+        <li>Total Requirements: 5</li>
+    </ul>
+</div>
+
+<h2>Detailed Traceability Analysis</h2>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Req ID</th>
+                <th>Requirement Description</th>
+                <th>Source Text</th>
+                <th>Test Cases</th>
+                <th>Coverage Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td class="req-id">REQ-001</td>
+                <td>Any manager that does not have a status of ‘Current’ will be excluded for notifications where their manager type has been identified as receiving notifications for a specific call subject.</td>
+                <td>
+                    <div class="source-text">
+                        "Any manager that does not have a status of ‘Current’ will be excluded for notifications where their manager type has been identified as receiving notifications for a specific call subject."
+                    </div>
+                </td>
+                <td>
+                    <span class="test-case-badge">TC-001</span>
+                    <span class="test-case-badge">TC-002</span>
+                </td>
+                <td><span class="coverage-good">Fully Covered</span></td>
+            </tr>
+            <tr>
+                <td class="req-id">REQ-002</td>
+                <td>Where there are no current managers of that type then the logic of the Call subjects routine will apply and the emails will be sent to the Individual/Backup Email(s).</td>
+                <td>
+                    <div class="source-text">
+                        "Where there are no current managers of that type then the logic of the Call subjects routine will apply and the emails will be sent to the Individual/Backup Email(s)"
+                    </div>
+                </td>
+                <td>
+                    <span class="test-case-badge">TC-003</span>
+                </td>
+                <td><span class="coverage-good">Fully Covered</span></td>
+            </tr>
+            <tr>
+                <td class="req-id">REQ-003</td>
+                <td>Emails are sent to managers that are Current and are that manager type for that property.</td>
+                <td>
+                    <div class="source-text">
+                        "emails are sent to managers that are Current and are that manager type for that property"
+                    </div>
+                </td>
+                <td>
+                    <span class="test-case-badge">TC-001</span>
+                    <span class="test-badge">TC-004</span>
+                    <span class="test-case-badge">TC-005</span>
+                </td>
+                <td><span class="coverage-good">Fully Covered</span></td>
+            </tr>
+            <tr>
+                <td class="req-id">REQ-004</td>
+                <td>Emails are not sent to managers that are not Current.</td>
+                <td>
+                    <div class="source-text">
+                        "Emails are not sent to managers that are not Current."
+                    </div>
+                </td>
+                <td>
+                    <span class="test-case-badge">TC-002</span>
+                </td>
+                <td><span class="coverage-good">Fully Covered</span></td>
+            </tr>
+            <tr>
+                <td class="req-id">REQ-005</td>
+                <td>When there are no ‘Current’ managers attached to that Manager type, the email is sent to the ‘Individual/backup’ Emails.</td>
+                <td>
+                    <div class="source-text">
+                        "the email is sent to the ‘Individual/backup’ Emails"
+                    </div>
+                </td>
+                <td>
+                    <span class="test-case-badge">TC-003</span>
+                </td>
+                <td><span class="coverage-good">Fully Covered</span></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<h2>Coverage Gaps and Recommendations</h2>
+
+<div class="summary-container">
+    <h3>Identified Gaps</h3>
+    <ol>
+        <li>No gaps identified in the provided test cases and requirements.</li>
+    </ol>
+    
+    <h3>Recommendations</h3>
+    <ol>
+        <li>Continue to maintain and update the test cases as the requirements evolve.</li>
+        <li>Ensure that all test cases are executed and verified regularly.</li>
+    </ol>
+</div>
+</body>
+</html>

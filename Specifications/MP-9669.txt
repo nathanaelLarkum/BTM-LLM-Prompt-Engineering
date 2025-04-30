@@ -1,0 +1,88 @@
+JIRA Epic Ref MP-10180 Works 7.0 Non-Headline
+
+JIRA Story Ref MP-9669 New Widget – Works - Works - Add Keyword Search to lister pages
+
+Description
+
+As a Works User I want to be able to search lister pages by specific text (alphanumeric) so that Finding items in the Listers is quicker and more efficient.
+
+On all Works lister pages include a new row between Title row and the Column header row.
+
+In the new row include an editable field with a placeholder of “Search…” . the search function will run as the characters are entered by the user.
+
+The search will accept any characters .
+
+The search will not be case sensitive.
+
+From Prime View
+
+
+
+And is also shown in the Poseidon Crud Folder
+
+ 
+
+The keyword search will:
+
+Be of the type ‘contains’ 
+
+If the table is already filtered by column filter, Search on the filtered results (i.e. this further restricts the results rather than starting from scratch)
+
+If possible, highlight the places where the searched for text has been found (as in the My activities page) Caveat: may need to be a separate ticket.
+
+ 
+
+Notes: 
+
+In ‘My Activities' list we excluded dates from the search - this was because you had to be very precise in how you entered the date to get the right results (and you could always use the filter) - I’m happy for us to do the same here.
+
+At some point this will become slow for larger users - In a future release we will add a default filter that can be set at admin level (e.g. Records within the last six months) - but we do not need to do this now. 
+
+
+Acceptance Criteria
+
+GIVEN - Any Works area (eg. PO’s, Contract, Jobs, Invoices, Payments) is entered
+
+When - The Lister page is viewed
+
+Then - There will be a global Keyword search Field below the Lister Title row and above the Column headings row
+
+Given - On any Lister page 
+
+When - Characters are entered into the Keyword search 
+
+Then - the search functionality will immediately start reducing the items included in the Lister
+
+Given - Characters have been entered in the keyword search
+
+When - the search results are returned
+
+Then -
+
+The search will be based on the combination and order of the characters entered
+
+The search will not be Case Sensitive
+
+Given - the search results have reduced the rows included on the lister 
+
+When - the accuracy of the results is verified
+
+Then - the rows on the lister correctly reflect the search parameter
+
+Given - a search has been applied to a lister page
+
+When - the search characters are deleted
+
+Then - The lister page will adjust as the search parameter is reduced
+
+
+
+Test Notes
+
+Use manually confirmed search results to confirm that the searches are correctly returned
+
+Test with wide variety of character types to confirm that the search correctly handles character types.
+
+Delete the Search characters and confirm that The rows in the lister are always the same as before any search parameter was entered.
+
+Ensure that the acceptance criteria are correctly included in the functionality

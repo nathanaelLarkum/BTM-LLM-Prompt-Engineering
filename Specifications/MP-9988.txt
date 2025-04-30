@@ -1,0 +1,122 @@
+JIRA Epic MP-9628 – Works v6.90.10 Essentials.
+
+JIRA Story MP-9988 - A Creditor Invoice form is populated with the Mojo ‘Works’ contract details when an invoice has been submitted via the ‘Mojo for Suppliers’ (MFS) app.
+
+Description
+
+As a Mojo user having both Works and MFS enabled, I want my Creditor Invoice forms to be automatically populated with Contract details if the invoice was submitted via MFS, so that I don’t have to manually fill these in and I can save a lot of time doing admin tasks.
+
+
+This story is to ensure that Contract details are being pulled through to Creditor Invoice form when the invoice was submitted via MFS, just like they do on Purchase Orders.
+
+The required fields are:
+
+DOCUMENT LEVEL
+
+Supplier/account
+
+Contract
+
+Document type
+
+Document Date
+
+Document reference
+
+Net amount
+
+VAT rate
+
+VAT Amount
+
+Gross amount
+
+Services rendered → Narrative
+
+Item level details to be populated once From/To dates been selected on the form, as per MP-9904 WORKS - Contract - Contract selection to Creditor Invoice Form (see appendix).
+
+Acceptance Criteria
+
+GIVEN a Supplier has submitted an invoice via MFS
+WHEN the form is submitted
+THEN a Creditor Invoice form is created in the ‘pending’ state
+
+AND when a Mojo User opens the form all fields are populated based on the invoice supplied, contract selected and to and from dates chosen, with relevant Items reflecting services, as in MP-9904 WORKS - Contract - Contract selection to Creditor Invoice Form (see appendix).
+
+Appendix
+
+MP-9904 WORKS - Contract - Contract selection to Creditor Invoice Form (see appendix).
+
+Description
+
+As a Mojo user with Works access, I want to be able to create a Creditor Invoice Form with a Contract selected on it, so that I can invoice against the contractual commitments, and I can keep track of the contracts financial and operational progress.
+
+
+To enable the user to select a Contract, we need to enrich the current Purchase Order selection field:
+
+Change the label to Purchase Order / Contract
+
+Make the dropdown display both POs and Contracts
+
+Enable the group property on the field, so records can be grouped by Work Item type (contract / po)
+
+The behaviour when a Purchase Order is selected should remain the same, however when selecting a contract, we need to force the user to select a From and To date, which we use to determine which commitments we want to write off.
+
+To do so, we’ll display a dialog with From and To date input fields (related to the From/To fields on the form itself) along with Cancel and Ok buttons - see below at the designs section.
+
+If the user enters the date and clicks on Ok, the relevant services will pull through as invoice lines. → any other case will result in disposing any input in the form
+
+Acceptance Criteria
+
+GIVEN a user wants to link a Contract to the form
+WHEN the user starts filling in the fields in document level
+THEN a Purchase Order / Contract field is visible
+
+
+GIVEN a user wants to select a contract
+WHEN the user clicks on the dropdown selection field
+THEN a list of available contracts and purchase orders will show
+AND they will be grouped by type
+
+
+GIVEN a user wants to manage the Creditor Invoice Items
+WHEN the contract is selected
+THEN Creditor Invoice Items are being created for each Contract Service that has occurrence in the set From/To period
+
+
+GIVEN a user inspects the automatically created Creditor Invoice Items
+WHEN the details are checked against the Contract Service details
+THEN all details, such as Transaction Type, Schedule and Expense Code, have been pulled through
+
+
+GIVEN a user wants to submit this form
+WHEN the user has filled in all required fields and submits the Creditor Invoice Form
+THEN the form gets submitted 
+
+High Level test Notes
+
+Contracts are visible in the dropdown selection field
+
+When a Contract is selected, the dialog shows on screen
+
+When a PO is selected, the dialog doesn’t show on screen
+
+If the dialog is closed without date inputs and pressing OK, the selection gets cleared
+
+if the dialog is closed using the ok button after inputting dates, the dates pull through to the form and invoice line items get created
+
+the invoice line items will have the relevant financial details pulled through from the contract service lines
+
+ 
+
+Additional test:
+
+Work was added to this ticket to include not displaying the From/To date dialog if the contract service didn’t recur. 
+
+Create a contract with a service with occurrence set to Never.
+
+Start the contract.
+
+Create a creditor invoice and call up the contract. Test: the ‘to/from’ dates should not be presented, the service should be called up.
+
+Repeat this with a service with recurrence set to 1 (eg annually), behaviour should be the same, no to/from dialog.

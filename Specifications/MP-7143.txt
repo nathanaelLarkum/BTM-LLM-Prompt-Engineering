@@ -1,0 +1,44 @@
+JIRA Epic MP-8832 – General 7.0.0.
+
+JIRA Story MP-7143 - Calls notification to managers will only include managers that have a status of 'Current’.
+
+Description
+
+As the Admin User in Mojo I do not want Tenant calls to be passed to managers that are no longer part of the organisation. I therefore want to exclude non-current managers from receiving notifications when their manager type is in the notify column of the Call Subject grid.
+
+Required
+
+Any manager that does not have a status of ‘Current’ will be excluded for notifications where their manager type has been identified as receiving notifications for a specific call subject.
+
+Where there are no current managers of that type then the logic of the Call subjects routine will apply and the emails will be sent to the Individual/Backup Email(s)
+
+
+
+The above is the original diagram form ‘MP-5064: Facility to manage Tenant to Home Company Communications‘
+
+We have added in the additional restriction for checking the current / Non-current managers (underlined in red above).
+
+
+Acceptance Criteria
+
+Given - A call to be raised with a subject that has a manager type to notify,
+
+And - There are managers attached to that Manager type, with a status of both ‘Current’ and ‘Archived’
+
+When - the call is actually raised
+
+Then - emails are sent to managers that are Current and are that manager type for that property
+
+And - Emails are not sent to managers that are not Current.
+
+Given - A call to be raised with a subject that has a manager type to notify,
+
+And - There are no ‘Current’ managers attached to that Manager type
+
+When - the call is actually raised
+
+Then -  Emails are not sent to managers that manager type for that property
+
+And - the email is sent to the ‘Individual/backup’ Emails
+
+NB - the above requirements should include where there is only one current manager and where there is multiple current managers of the relevant manager type

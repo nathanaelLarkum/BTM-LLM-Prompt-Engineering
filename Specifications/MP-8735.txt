@@ -1,0 +1,318 @@
+JIRA Epic Ref MP-8832 General 7.0.0
+
+JIRA Story Ref MP-8735 Options to download visible columns only from lister pages or all columns that you are allowed to access
+
+Description
+
+Currently, if you download a lister page, you get the columns you have selected plus all columns for the given table (whether they are displayed on the screen or not and whether you are allowed to see them or not) . 
+
+As a mojo user, when i click to download a lister table to excel, i would like to have two options. 1). to download just the displayed columns and 2). to download all columns that i am allowed to see. 
+
+This is so that
+
+a) I don’t see information I’m not allowed to see
+
+b) I can easily get a download of just the columns i myself have chosen. 
+
+ 
+
+To achieve this: 
+
+When a user left clicks on a download button (within the lister pages) then just the visible columns will be downloaded to the CSV file, in the order in which they have been arranged on-screen. 
+
+When a user right clicks clicks on a download button (within the lister pages), a pop up menu will give them 2 options: (download) visible columns or (download) all columns. 
+
+Suggested Format: 
+
+
+
+When the download visible columns option is selected then the same download will happen as per the left click option. 
+
+When the ‘All columns’ option is selected, this refers to all columns that are available to view for this lister (as defined in the System Settings).
+
+Currently 
+
+you get the columns you have selected plus all columns for the given table (whether they are displayed on the screen or not and whether you are allowed to see them or not)
+
+Lister name
+
+Columns available in System Man
+
+Column available on screen
+
+Columns in Download
+
+Manager
+
+16
+
+16
+
+29
+
+Client Parent
+
+17
+
+17
+
+22
+
+Client
+
+39
+
+39
+
+78
+
+Estates
+
+10
+
+10
+
+16
+
+Property
+
+71
+
+71
+
+76
+
+Headlease
+
+42
+
+42
+
+80
+
+Landlord
+
+30
+
+30
+
+32
+
+Units
+
+53
+
+53
+
+86
+
+Tenant Parent
+
+22
+
+22
+
+44
+
+Tenant
+
+28
+
+28
+
+55
+
+Leases
+
+51
+
+51
+
+87
+
+Suppliers
+
+43
+
+43
+
+85
+
+Debtors
+
+48
+
+48
+
+87
+
+Creditors
+
+75
+
+75
+
+136
+
+Vacants
+
+51
+
+51
+
+84
+
+
+
+Acceptance Criteria
+
+GIVEN a lister pages current view needs to be exported - left click
+WHEN a user left clicks on the download button on any lister page
+THEN a csv file gets generated, containing the same set of columns the user can see on the screen, in the same order
+
+GIVEN a lister pages current view needs to be exported - right click
+WHEN a user right clicks on the download button on any lister page
+THEN a selection window appears where the user can select the Visible Columns option to export all related columns, in the same order as they appear on screen. 
+
+GIVEN a lister page with all related columns needs to be exported
+WHEN a user right clicks on the download button on any lister page
+THEN a selection window appears where the user can select the All Columns option to export all allowed columns (as defined in the system config - Lister settings)
+
+
+Test Cases
+
+TEST CASE 1
+
+Exporting a lister page - the existing method
+
+Preconditions
+
+User logged in to the Mojo app
+
+Test Procedure
+
+Open the Dashboards page by either clicking on the Dashboard shortcut (first icon on the navigation bar in the top right corner) or accessing via the burger menu on the left hand side of the navigation bar)
+
+Open any lister page (Managers / Clients / Properties / Units etc)
+
+On the right end of the search bar, left-click on the download button
+
+Expected Outcome:
+A csv file generated with the same columns, in the same order as seen on the lister page
+
+
+
+TEST CASE 2
+Exporting a lister page - the existing method - custom columns
+
+Preconditions
+
+User logged in to the Mojo app
+
+ Test Procedure
+
+Open the Dashboards page by either clicking on the Dashboard shortcut (first icon on the navigation bar in the top right corner) or accessing via the burger menu on the left hand side of the navigation bar)
+
+Open any lister page (Managers / Clients / Properties / Units etc)
+
+On the right side of the search bar, click on the edit button and remove/add some columns
+
+Click on Ok
+
+On the right side of the search bar, left-click on the download button
+
+ Expected Outcome:
+A csv file generated with the same columns, in the same order as seen on the lister page, reflecting the changes you just made on the column selection
+
+
+TEST CASE 3
+Exporting a lister page - the new method
+
+ Preconditions
+
+User logged in to the Mojo app
+
+ Test Procedure
+
+Open the Dashboards page by either clicking on the Dashboard shortcut (first icon on the navigation bar in the top right corner) or accessing via the burger menu on the left hand side of the navigation bar)
+
+Open any lister page (Managers / Clients / Properties / Units etc)
+
+On the right end of the search bar, right-click on the download button and select Visible Columns
+
+ Expected Outcome:
+A csv file generated with the same columns, in the same order as seen on the lister page
+
+
+ 
+
+
+TEST CASE 4
+Exporting a lister page - the new method - custom columns
+
+ Preconditions
+
+User logged in to the Mojo app
+
+ Test Procedure
+
+Open the Dashboards page by either clicking on the Dashboard shortcut (first icon on the navigation bar in the top right corner) or accessing via the burger menu on the left hand side of the navigation bar)
+
+Open any lister page (Managers / Clients / Properties / Units etc)
+
+On the right side of the search bar, click on the edit button and remove/add some columns
+
+Click on Ok
+
+On the right end of the search bar, right-click on the download button and select Visible Columns
+
+ Expected Outcome:
+
+A csv file generated with the same columns, in the same order as seen on the lister page, reflecting the changes you just made on the column selection
+
+
+TEST CASE 5
+Exporting a lister page - the new method - all columns
+
+ Preconditions
+
+User logged in to the Mojo app
+
+ Test Procedure
+
+Open the Dashboards page by either clicking on the Dashboard shortcut (first icon on the navigation bar in the top right corner) or accessing via the burger menu on the left hand side of the navigation bar)
+
+Open any lister page (Managers / Clients / Properties / Units etc)
+
+On the right end of the search bar, right-click on the download button and select All Columns
+
+ Expected Outcome:
+A csv file generated with all the allowed system columns (as defined in the Admin Dashboard > System settings > Lister Settings)
+
+
+
+TEST CASE 6
+Exporting a lister page - the new method - all columns and custom view 
+
+Preconditions
+
+User logged in to the Mojo app
+
+ Test Procedure
+
+Open the Dashboards page by either clicking on the Dashboard shortcut (first icon on the navigation bar in the top right corner) or accessing via the burger menu on the left hand side of the navigation bar)
+
+Open any lister page (Managers / Clients / Properties / Units etc)
+
+On the right side of the search bar, click on the edit button and remove/add some columns
+
+Click on Ok
+
+On the right end of the search bar, right-click on the download button and select All Columns
+
+ Expected Outcome:
+A csv file generated with all the allowed system columns (as defined in the Admin Dashboard > System settings > Lister Settings) and none of the changes you've just made on the columns would be reflected on the spreadsheet.
+
+ 
+
+Also test changing the Allowed columns in the system settings and checking that the ‘All’ list is changed accordingly 

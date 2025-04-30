@@ -1,0 +1,323 @@
+<specification>
+“JIRA Epic Ref MP-1829 Mojo for Suppliers Web App
+
+JIRA Story Ref MP-2763 New Widget – Mojo for Suppliers Invoice Upload
+
+The Home and Accounts dashboards for Mojo for Suppliers will have various widgets on them, this ticket is about one of those widgets, the Invoice Upload widget.
+
+NOTE: We will NOT generate the Creditor Mojo Form as part of this ticket, however we will provide a toast stating that the submit was successful (RC: need to check whether it should remove the invoice from the list too).
+
+A Two Stage Widget
+
+Stage 1 - Initiator Widget
+
+The Invoice upload widget will have two stages to it, the first being an initial ‘on the dashboard’ widget. We will refer to this widget as the Initiator Widget throughout this spec, its purpose is to allow the User to select what PDF files to upload and to also call an invoice input screen to be displayed.
+
+The Initiator Widget will look as per the below mock-up (brand aware, Aurora brand applied here…).
+
+The Initiator Widget will need to have the image element added to the Style Guide so that our clients (for example Cushman & Wakefield) can have their own image to the widget if they wished, we will however provide a default placeholder image on this widget. I anticipate that we will source the placeholder image from Jon Shallcross - note: for a cleaner look, I don't want any left and right padding on the image container (see below).
+
+
+
+Widget Characteristics:
+
+Initiator Widget
+
+This widget will:
+
+Allow the drag and drop of one or more PDF files.
+
+Not allow a maximised state - this will be inappropriate use of space.
+
+Have a fixed size of 3x3 dashboard grid units 
+
+Have an Upload button as a secondary method of initiation:
+
+Clicking on the Upload button will open a File Upload window used by the current Operating System.
+
+Will allow multi-select of files.
+
+
+
+Dragging and dropping or selecting a single PDF file via the Upload button will upload and store the file and show the second stage of this widget - the Input Widget (see stage 2) 
+
+Dragging and dropping or selecting multiple PDF files via the Upload button will upload and store the files and list them on the initiator widget. Three changes will be visible on the initiator widget:
+
+
+
+The text below the widget title will change to: “Click on an invoice below to provide details and send it to us”
+
+The invoices will be listed over the area where the picture is. 
+
+one row to a pdf file stating the filename and extension (.pdf). 
+
+the fill colour for each row will be black with 50% transparency 
+
+the text colour will be the same as the main text colour for a given branding - (although this may need a tweek during test). 
+
+each row will have a delete icon (fa-trash-o) at the right hand end (same colour as the main text). 
+
+the border between rows will be the same colour as used for grid borders for a given branding. 
+
+a vertical scroll bar will be present if needed 
+
+There will be a disclaimer across the bottom of the widget stating: “The above invoices will not be passed to us for consideration until you provide details and send the document” 
+
+This will be in Red text 
+
+the background will be white 
+
+the border will be narrow black
+
+If the user clicks on an invoice in the list then the system will open the second stage for that invoice (see stage 2). 
+
+If the user clicks the delete icon then that one invoice will be deleted from it’s temporary location and the item will be removed from the list. 
+
+The list of invoices will be unique to the user uploading them. 
+
+Each invoice will remain on the list (for that user only) until the user has either:
+
+Completed stage 2 to send the invoice to the client 
+
+Deleted the invoice 
+
+The list of uncompleted invoices will remain on the widget if the user signs out/crashes and then signs back in. 
+
+If the list reduces down to zero items then the widget will revert back to it’s initial state: 
+
+
+
+Uploading an invalid file type will cause an error message on the widget stating “
+
+Stage 2: The Input Widget
+
+When stage 2 is initiated (either by dragging and dropping a single pdf onto the initiator widget or by clicking on an a file in the initiator widget list) a modal screen will open - we will refer to it as the Input Widget.
+
+This will allow the User to input data, view the PDF file and then submit them both to the Creditor Invoice Approval System (see https://tracesolutions.atlassian.net/browse/MP-67). 
+
+The Input Widget will look as per the below mock-up (brand aware, some dummy brand applied here…).
+
+
+
+Widget Characteristics: Input Widget
+
+This widget will be a modal pop-up on top of the usual dark overlay, its initial size will be: Width = 980px
+
+Height = 800px
+
+If the available space is less than the above then the window will simply show in full screen mode.
+
+NB// In sanity check, make sure that this is the suitable window size.
+
+The widget will have the following elements:
+
+A Widget Header, with:
+
+The title Invoice Upload 
+
+A Maximise/Return toggle button - i.e. it will toggle between a maximised state and back to its modal pop-up state. 
+
+A Close button, clicking close will display the following confirmation dialog: 
+
+
+
+Clicking No will close the confirmation dialog, leaving the Input Widget on screen ready for the User to carry on without losing any entered data. 
+
+Clicking Yes will close the confirmation dialog and the Input Widget. 
+
+A Data Input Area on the left-hand side containing:
+
+A skinny scroll bar - where appropriate. 
+
+An ‘Accordion’ element with the following sections:
+
+Document Details 
+
+Billing Amount 
+
+Billing Details 
+
+Additional Docs (for more information see the below section) 
+
+These sections will have the properties detailed in the attached spreadsheet Field Properties and Form Mapping.xlsx
+
+An embedded PDF viewer on the right hand side, this will contain:
+
+The PDF document(s) (primary document(s)) that initiated the Input Widget. 
+
+A skinny scroll bar - both horizontal and vertical where appropriate. 
+
+The ability to zoom in / out with regards to magnification - minimum.
+
+Side note, Devs please investigate if it would be better to use <embed> or a 3rd party library like : https://mozilla.github.io/pdf.js
+
+A Send button
+
+This will be ‘inactive’ until the User has filled in all of the mandatory fields for the document they are on, it will then become ‘active’ 
+
+Once ‘active’, clicking on this will hand off…
+
+TO BE TESTED ONCE THE BELOW HAS BEEN COMPLETED.
+
+All of the data entered in the input fields for the record the User is on. 
+
+All (if any) of the additional documents for the record the User is on. 
+
+The Primary PDF for the record the User is on. 
+
+…To the Creditor Invoice (logging and approval) Form -
+
+https://tracesolutions.atlassian.net/browse/MP-2804. 
+
+https://tracesolutions.atlassian.net/browse/MP-3274
+https://tracesolutions.atlassian.net/browse/MP-3393 
+
+There is no upload as part of this story, this will be part ofhttps://tracesolutions.atlassian.net/browse/MP-3274 and https://tracesolutions.atlassian.net/browse/MP-3393. 
+
+This information and the document(s) (main and any supplementary) will be removed from their temporary locations. 
+
+The item will be removed from the initiator widget (stage 1) 
+
+Then close the Input widget 
+
+Additional Docs - further information…
+
+When a User uploads a PDF to start the input process, this PDF will be the primary document attached for the Creditor invoice logging and approval form. However, a Mojo form allows multiple attachments and the Users of Mojo for Suppliers may wish to add additional documents for back up purposes - a good example of this could be where a tenant has signed a statement confirming that they are happy with the works carried out.
+
+We will allow Mojo for Supplier Users the ability to Drag/Drop or use an ‘Add’ button to attached multiple additional documents for the current Invoice they are on. These, once submitted and handed off to Mojo will become attachments to the Mojo form.
+
+Additional Docs. section will have:
+
+A label 'Additional docs.' 
+
+A label of ‘Drag and drop or add them here.’ 
+
+A drag and drop placeholder image - where the are no additional documents / files attached. 
+
+A list of files by file name and an associated delete icon (trash can) - where one or more additional documents / files have been attached. 
+
+An Add button. 
+
+So:
+
+Dragging and Dropping a single or multiple file(s) will:
+
+Attach them to the current invoice as additional documents / files. 
+
+For each attached additional document / file, its file name will be displayed in a list. 
+
+For each attached additional document / file, there will be an associated delete icon (trash can). 
+
+Clicking on this will discard the additional document / file from the list - this will then not be attached when handed off to a Mojo form. 
+
+Clicking on the ‘Add’ button will do the same as the above, only with the follwing change:
+
+A File Upload window used by the current Operating System will open. 
+
+The User will be allowed to selected one or many files. 
+
+Clicking on Open will attach the file(s) as additional Document(s). 
+
+Note: With drag/drop or Add, the allowed file types will be the same as per the Document Centre.
+
+Also Note: The additional documents will not be preview-able in this widget.
+
+Additional Docs section without any files uploaded:
+
+
+
+Additional Docs section with files uploaded:
+
+
+
+Additions to the Style Guide
+
+We will need to extend the current style guide to now include Mojo for Suppliers widget where appropriate.
+
+However the Input Widget will follow the same rules already set in the style guide - the below mock-up is branded as Graham + Sibbald:
+
+
+
+
+
+
+
+Dashboards That Have This Widget:
+
+This widget (i.e. the initiator widget and the input widget that it opens) will be available on the Home dashboard in Mojo for Suppliers. This means that Users with access to one creditor only will see the version of the input widget where the ‘Account for’ field is not displayed (as there is only one creditor that they can be uploading for). Supplier users with access to more than one creditor will see the version of the input widget with the ‘Account for’ field. 
+
+Manage my Widgets : Invoice Upload - Set Up Widget Properties.
+
+Deferred to https://tracesolutions.atlassian.net/browse/MP-3344 
+
+Note: This section is documented in ticket https://tracesolutions.atlassian.net/browse/MP-3321 which is deferred until a later release
+
+TEST CASES
+
+Checking
+
+Check to make sure that all of the items in the above spec have been delivered.
+
+Testing
+
+Test the impact of drag/drop/upload of a PDF with the same File Name.
+
+Result: Allows files with the same name to be queued for upload
+
+What happens to the data entered when you close the input widget and select the same PDF.
+
+Result: Entered field data is lost as per spec
+
+What happens to the data entered when you close the input widget and select a different PDF.
+
+Result: Entered field data is lost as per spec
+
+What happens to additional documents when you close the input widget and select the same PDF.
+
+Result: Additional documents are still attached - should discard them
+
+What happens to additional documents when you close the input widget and select a different PDF.
+
+Result: Additional documents are still attached - should discard them
+
+What happens if a non-supported file type is attempted to be uploaded using the additional documents feature - for example, a Macro enabled workbook?
+
+Result: Error pop-up stating invalid file type and the supported file types -. 
+
+Questions to ask
+
+Can you SQL Inject?
+
+Can you Cross Site Script with JavaScript?
+
+https://owasp.org/www-community/xss-filter-evasion-cheatsheet
+
+'><script>alert('test')</script>
+
+Answer is Forms API stops this PASSED
+
+Things noticed
+
+Click and drag the Input Widgets header, with the mouse held down move the pointer away from the header. Release the mouse and move it, the Input Widget moves with your mouse as its now confused - although this is not the end of the world.”
+</specification>
+
+Use your knowledge base analyze the provided specification document and follow the steps:
+1.Extract and identify all required test cases from requirements. 
+2.Fully document ALL of the test cases even if it's long.
+3.Include ALL test cases identified from the specification.
+4.Do not condense or summarize test cases.
+5.Do not skip or omit any test cases.
+6.Maintain clear traceability to requirements.
+7.Be organized in a logical and consistent manner.
+8.Keep sequential numbering.
+9.Include edge cases and error handling scenarios. 
+10.Assign appropriate priority levels (High/Medium/Low). 
+11.Determine test types (Functional/Integration/System/Performance/Security). 
+12.Map to relevant ISO categories
+13.Use the appropriate HTML formatting as a code in the code section and not as a text reply. 
+14.Include coverage status modals for each test case.
+15.Ensure traceability to requirements.
+16.Provide a popup/modal for evidence called 'View Evidence' for each test case.
+17.Each test case evidence must include: "Source Document: [document name] Location: [section/page] Requirement Text: '[exact quote from specification]' 
+Traceability: [explanation of how test case maps to this requirement]" . 
+18.Identify any gaps in test coverage.

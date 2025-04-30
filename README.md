@@ -36,7 +36,7 @@ The basic structure is below, you are encouraged to change the prompts as you se
    - Links requirements to business needs
    - Store results in requirements.html
 
-6. Generate 
+6. Generate Traceability Matrix
    - Use Traceability Matrix prompt
    - Creates mapping between requirements and test cases
    - Ensures complete coverage of requirements
